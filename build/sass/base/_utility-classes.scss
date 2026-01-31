@@ -34,9 +34,11 @@
 .p-top-small {
   padding-top: 1rem;
 }
+
 .p-top-large {
   padding-top: 1.6rem;
 }
+
 .p-bottom-large {
   padding-bottom: 1.6rem;
 }
@@ -45,6 +47,7 @@
   .p-top-large {
     padding-top: 3.5rem;
   }
+
   .p-bottom-large {
     padding-bottom: 3.5rem;
   }
@@ -53,9 +56,11 @@
 .no-margin {
   margin: 0;
 }
+
 .nu {
   text-decoration: none;
 }
+
 .nu:hover {
   text-decoration: underline;
 }
@@ -63,9 +68,11 @@
 .t-left {
   text-align: left;
 }
+
 .t-right {
   text-align: right;
 }
+
 .t-center {
   text-align: center;
 }
@@ -77,9 +84,11 @@
 .float-left {
   float: left;
 }
+
 .float-right {
   float: right;
 }
+
 .push-right {
   margin-right: 20px;
 }
@@ -99,4 +108,16 @@
 
 .hide {
   display: none;
+}
+
+// PAGINATION STYLEs
+
+.page-numbers {
+  display: inline-block;
+  padding: 8px 9px;
+}
+
+.current {
+  font-weight: bold;
+  color: $mainBlue;
 }

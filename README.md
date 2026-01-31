@@ -1,6 +1,6 @@
 # Drops of Knowledge
 
 
-## PLUGINS:
+### PLUGINS:
 
 ** ACF 

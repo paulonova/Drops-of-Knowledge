@@ -842,6 +842,16 @@ li {
   display: none;
 }
 
+.page-numbers {
+  display: inline-block;
+  padding: 8px 9px;
+}
+
+.current {
+  font-weight: bold;
+  color: #0D3B66;
+}
+
 .site-header {
   z-index: 3;
   position: absolute;
