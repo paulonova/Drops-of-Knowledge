@@ -1,0 +1,13 @@
+# Ignore everything
+/*
+
+# But keep this gitignore
+!.gitignore
+
+# Unignore wp-content theme path and parents so the drops-of-knowledge-theme is tracked
+!/wp-content/
+!/wp-content/themes/
+!/wp-content/themes/drops-of-knowledge-theme/
+!/wp-content/themes/drops-of-knowledge-theme/**
+
+# (Everything else remains ignored)
