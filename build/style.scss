@@ -1,0 +1,27 @@
+
+/* SASS and Global'ish Stuff */
+
+@use "sass/modules/normalize.scss";
+@use "../node_modules/@glidejs/glide/dist/css/glide.core.min.css";
+
+
+@use "sass/modules/shame.scss";
+@use "sass/modules/site-header.scss";
+@use "sass/modules/site-footer.scss";
+@use "sass/modules/main-navigation.scss";
+@use "sass/modules/btn.scss";
+@use "sass/modules/acf-map.scss";
+@use "sass/modules/event-summary.scss";
+@use "sass/modules/full-width-split.scss";
+@use "sass/modules/generic-content.scss";
+@use "sass/modules/headline.scss";
+@use "sass/modules/hero-slider.scss";
+@use "sass/modules/link-list.scss";
+@use "sass/modules/login.scss";
+@use "sass/modules/metabox.scss";
+@use "sass/modules/my-notes.scss";
+@use "sass/modules/page-banner.scss";
+@use "sass/modules/page-links.scss";
+@use "sass/modules/post-item.scss";
+@use "sass/modules/professor-card.scss";
+@use "sass/modules/search-overlay.scss";

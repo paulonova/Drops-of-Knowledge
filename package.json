@@ -1,0 +1,21 @@
+{
+  "name": "drops-of-knowledge-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "npx sass ./build/style.scss ./build/style.css",
+    "watch-css": "npx sass --watch ./build/style.scss ./build/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.97.2"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.7.1",
+    "normalize.css": "^8.0.1"
+  }
+}

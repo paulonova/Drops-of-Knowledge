@@ -1,0 +1,44 @@
+@use "../base/variables" as *;
+@use "../base/baseline" as *;
+
+.full-width-split {
+  @include atMedium {
+    display: flex;
+  }
+
+  .positioned {
+    @include absolutePosBottom;
+    margin-bottom: 5px;
+  }
+
+  &__one {
+    flex: 1;
+    position: relative;
+    padding: 1.6rem 16px;
+    @include atMedium {
+      padding: 40px;
+    }
+
+    .full-width-split__inner {
+      @include atMedium {
+        float: right;
+      }
+    }
+  }
+
+  &__two {
+    flex: 1;
+    position: relative;
+    background-color: $beige;
+    padding: 1.6rem 16px;
+    @include atMedium {
+      padding: 40px;
+    }
+  }
+
+  &__inner {
+    @media (min-width: 1350px) {
+      width: 610px;
+    }
+  }
+}
