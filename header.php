@@ -18,25 +18,13 @@
       <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
       <div class="site-header__menu group">
         <nav class="main-navigation">
-
-          <!-- <?php
-                //  TODO: Dinamically display the navigation menu assigned to the 'headerMenu' location.
-                // wp_nav_menu(array(
-                //   'theme_location' => 'headerMenu',
-                //   'container' => false,
-                //   'fallback_cb' => 'wp_page_menu',
-                //   'depth' => 2
-                // ));
-                ?> -->
-
-
           <ul>
             <!-- get_the_ID can oalso evaluated as a 0, because the parent ID is always ZERO -->
             <li <?php if (is_page('about-the-site') || wp_get_post_parent_id(get_the_ID()) == 15) echo 'class="current-menu-item"'; ?>><a href="<?php echo site_url('/about-the-site') ?>">About the Site</a></li>
             <li><a href="#">Programs</a></li>
             <li><a href="#">Events</a></li>
             <li><a href="#">Campuses</a></li>
-            <li <?php if (is_page('blog') || wp_get_post_parent_id(get_the_ID()) == 57) echo 'class="current-menu-item"'; ?>><a href="<?php echo site_url('/blog') ?>">Blog</a></li>
+            <li <?php if (get_post_type() == 'post') echo 'class="current-menu-item"'; ?>><a href="<?php echo site_url('/blog') ?>">Blog</a></li>
           </ul>
         </nav>
         <div class="site-header__util">
@@ -47,3 +35,13 @@
       </div>
     </div>
   </header>
+
+  <!-- <?php
+        //  TODO: Dinamically display the navigation menu assigned to the 'headerMenu' location.
+        // wp_nav_menu(array(
+        //   'theme_location' => 'headerMenu',
+        //   'container' => false,
+        //   'fallback_cb' => 'wp_page_menu',
+        //   'depth' => 2
+        // ));
+        ?> -->

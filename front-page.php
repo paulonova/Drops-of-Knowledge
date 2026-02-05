@@ -7,14 +7,14 @@
   <div class="page-banner__content container t-center c-white">
     <h1 class="headline headline--hand_writen">Drops of Knowledge</h1>
     <h3 class="headline headline--small">Sharing the Living Word with a Thirsty World</h3>
-    <a href="#" class="btn btn--medium btn--blue">Find Your Major</a>
+    <a href="<?php echo site_url('/blog'); ?>" class="btn btn--medium btn--blue">View All Articles</a>
   </div>
 </div>
 
 <div class="full-width-split group">
   <div class="full-width-split__one">
     <div class="full-width-split__inner">
-      <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
+      <h2 class="headline headline--small-plus t-center">Last Theology Articles</h2>
 
       <div class="event-summary">
         <a class="event-summary__date t-center" href="#">
@@ -37,37 +37,34 @@
         </div>
       </div>
 
-      <p class="t-center no-margin positioned"><a href="#" class="btn btn--blue">View All Events</a></p>
+      <p class="t-center no-margin positioned"><a href="<?php echo site_url('/category/theology/'); ?>" class="btn btn--blue">Theology Articles</a></p>
     </div>
   </div>
 
 
   <div class="full-width-split__two">
     <div class="full-width-split__inner">
-      <h2 class="headline headline--small-plus t-center">Read Our Posts</h2>
-
-      <div class="event-summary">
-        <a class="event-summary__date event-summary__date--beige t-center" href="#">
-          <span class="event-summary__month">Jan</span>
-          <span class="event-summary__day">20</span>
-        </a>
-        <div class="event-summary__content">
-          <h5 class="event-summary__title headline headline--tiny"><a href="#">We Were Voted Best School</a></h5>
-          <p>For the 100th year in a row we are voted #1. <a href="#" class="nu gray">Read more</a></p>
+      <h2 class="headline headline--small-plus t-center">Last Worship Articles</h2>
+      <?php $homepagePosts = new WP_Query(array(
+        'posts_per_page' => 2,
+      )); ?>
+      <?php while ($homepagePosts->have_posts()): $homepagePosts->the_post(); ?>
+        <div class="event-summary">
+          <a class="event-summary__date event-summary__date--beige t-center" href="<?php the_permalink() ?>">
+            <span class="event-summary__month"><?php echo the_time('M'); ?></span>
+            <span class="event-summary__day"><?php echo the_time('d'); ?></span>
+          </a>
+          <div class="event-summary__content">
+            <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+            <p><?php echo wp_trim_words(get_the_content(), 18); ?> <a href="<?php the_permalink(); ?>" class="nu gray">Read more</a></p>
+          </div>
         </div>
-      </div>
-      <div class="event-summary">
-        <a class="event-summary__date event-summary__date--beige t-center" href="#">
-          <span class="event-summary__month">Feb</span>
-          <span class="event-summary__day">04</span>
-        </a>
-        <div class="event-summary__content">
-          <h5 class="event-summary__title headline headline--tiny"><a href="#">Professors in the National Spotlight</a></h5>
-          <p>Two of our professors have been in national news lately. <a href="#" class="nu gray">Read more</a></p>
-        </div>
-      </div>
+      <?php endwhile;
+      // Always reset post data after custom query
+      wp_reset_postdata();
+      ?>
 
-      <p class="t-center no-margin positioned"><a href="#" class="btn btn--yellow">View All Posts</a></p>
+      <p class="t-center no-margin positioned"><a href="<?php echo site_url('/category/worship/'); ?>" class="btn btn--yellow">Worship Articles</a></p>
     </div>
   </div>
 </div>
