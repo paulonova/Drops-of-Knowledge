@@ -25,8 +25,17 @@
       <li><a href="<?php echo site_url('/about-the-site') ?>">Learn about us</a></li>
     </ul>
 
-    <h2 class="headline headline--medium">Search our site</h2>
-    <?php get_search_form(); ?>
+    <div class="search-icon-container">
+      <h2 class="headline headline--medium">Search our site</h2>
+      <img src="<?php echo get_theme_file_uri('/images/404-icon.png') ?>" alt="404 Icon">
+    </div>
+
+    <div class="search-form-container">
+      <?php get_search_form(array(
+        'placeholder' => 'Search the site...'
+      )); ?>
+    </div>
+
   </div>
 </div>
 

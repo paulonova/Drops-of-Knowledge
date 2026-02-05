@@ -20,3 +20,13 @@ function knowledge_features() {
 }
 
 add_action('after_setup_theme', 'knowledge_features');
+
+
+// Customize the search form placeholder text.
+add_filter('get_search_form', function ($form) {
+  return str_replace(
+    '<input type="text"',
+    '<input type="text" placeholder="Search for..."',
+    $form
+  );
+});
