@@ -9,7 +9,7 @@
 
       <div class="site-footer__col-two-three-group">
         <div class="site-footer__col-two">
-          <h3 class="headline headline--small">Explore</h3>
+          <h3 class="headline headline--small">Utforska</h3>
           <nav class="nav-list">
             <?php
             wp_nav_menu(array(
@@ -23,7 +23,7 @@
         </div>
 
         <div class="site-footer__col-three">
-          <h3 class="headline headline--small">Learn</h3>
+          <h3 class="headline headline--small">Lära</h3>
           <nav class="nav-list">
             <?php
             wp_nav_menu(array(
@@ -38,7 +38,7 @@
       </div>
 
       <div class="site-footer__col-four">
-        <h3 class="headline headline--small">Connect With Us</h3>
+        <h3 class="headline headline--small">Följ oss</h3>
         <nav>
           <ul class="min-list social-icons-list group">
             <li>

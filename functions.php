@@ -1,5 +1,8 @@
 <?php
 
+// Create theme support for post thumbnails (featured images) in the editor.
+add_theme_support('post-thumbnails');
+
 function knowledge_files() {
   wp_enqueue_script('main-knowledge-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
   wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
@@ -20,6 +23,62 @@ function knowledge_features() {
 }
 
 add_action('after_setup_theme', 'knowledge_features');
+
+
+function knoledge_post_types() {
+  register_post_type('events', array(
+    'public' => true,
+    'menu_icon' => 'dashicons-calendar',
+    'taxonomies' => array('category'),
+    'labels' => array(
+      'name' => 'Events',
+      'add_new_item' => 'Add New Event',
+      'edit_item' => 'Edit Event',
+      'all_items' => 'All Events',
+      'singular_name' => 'Event'
+    ),
+    'show_in_rest' => true,
+    'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+    'rewrite' => array('slug' => 'events'),
+    'has_archive' => true,
+  ));
+
+  register_post_type('history', array(
+    'public' => true,
+    'menu_icon' => 'dashicons-welcome-learn-more',
+    'taxonomies' => array('category'),
+    'labels' => array(
+      'name' => 'History',
+      'add_new_item' => 'Add New History Item',
+      'edit_item' => 'Edit History Item',
+      'all_items' => 'All History Items',
+      'singular_name' => 'History Item'
+    ),
+    'show_in_rest' => true,
+    'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+    'rewrite' => array('slug' => 'history'),
+    'has_archive' => true,
+  ));
+  register_post_type('books', array(
+    'public' => true,
+    'menu_icon' => 'dashicons-book-alt',
+    'taxonomies' => array('category'),
+    'labels' => array(
+      'name' => 'Book',
+      'add_new_item' => 'Add New Book Item',
+      'edit_item' => 'Edit Book Item',
+      'all_items' => 'All Book Items',
+      'singular_name' => 'Book Item'
+    ),
+    'show_in_rest' => true,
+    'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+    'rewrite' => array('slug' => 'history'),
+    'has_archive' => true,
+  ));
+}
+
+add_action('init', 'knoledge_post_types');
+
 
 
 // Customize the search form placeholder text.
