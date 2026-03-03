@@ -17,6 +17,7 @@
       <h2 class="headline headline--small-plus t-center">Senaste teologiska artiklar</h2>
       <?php $homepageTheoPosts = new WP_Query(array(
         'posts_per_page' => 2,
+        'post_type' => 'post',
         'category_name' => 'theology'
       )); ?>
 
@@ -45,6 +46,7 @@
       <h2 class="headline headline--small-plus t-center">Senaste lovsångsartiklar</h2>
       <?php $homepageWorshipPosts = new WP_Query(array(
         'posts_per_page' => 2,
+        'post_type' => 'post',
         'category_name' => 'worship'
       )); ?>
       <?php while ($homepageWorshipPosts->have_posts()): $homepageWorshipPosts->the_post(); ?>

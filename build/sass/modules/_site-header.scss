@@ -1,4 +1,3 @@
-
 @use "../base/baseline" as *;
 @use "../base/utility-classes.scss" as *;
 
@@ -105,6 +104,7 @@
 
   &__btn {
     margin-right: 20px;
+
     @include atMedium {
       float: left;
     }
@@ -115,3 +115,23 @@
   }
 }
 
+
+.primary-menu {
+
+  .sub-menu {
+    display: none;
+    position: absolute;
+
+    li {
+      padding-left: 0;
+    }
+
+  }
+
+  li:hover>.sub-menu,
+  li:focus>.sub-menu {
+    display: flex;
+    flex-direction: column;
+    transition: all 1s ease-out;
+  }
+}

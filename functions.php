@@ -28,6 +28,7 @@ add_action('after_setup_theme', 'knowledge_features');
 function knoledge_post_types() {
   register_post_type('events', array(
     'public' => true,
+    'show_in_rest' => true,
     'menu_icon' => 'dashicons-calendar',
     'taxonomies' => array('category'),
     'labels' => array(
@@ -45,6 +46,7 @@ function knoledge_post_types() {
 
   register_post_type('history', array(
     'public' => true,
+    'show_in_rest' => true,
     'menu_icon' => 'dashicons-welcome-learn-more',
     'taxonomies' => array('category'),
     'labels' => array(
@@ -61,6 +63,7 @@ function knoledge_post_types() {
   ));
   register_post_type('books', array(
     'public' => true,
+    'show_in_rest' => true,
     'menu_icon' => 'dashicons-book-alt',
     'taxonomies' => array('category'),
     'labels' => array(
