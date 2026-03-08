@@ -27,6 +27,8 @@ add_action('after_setup_theme', 'knowledge_features');
 
 function knoledge_post_types() {
   register_post_type('events', array(
+    // 'rewrite' => array('slug' => 'events'),  => This is optional, WordPress will automatically generate the slug I wrote here..
+    'has_archive' => true,
     'public' => true,
     'show_in_rest' => true,
     'menu_icon' => 'dashicons-calendar',
@@ -38,30 +40,12 @@ function knoledge_post_types() {
       'all_items' => 'All Events',
       'singular_name' => 'Event'
     ),
-    'show_in_rest' => true,
     'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
-    'rewrite' => array('slug' => 'events'),
-    'has_archive' => true,
   ));
 
-  register_post_type('history', array(
-    'public' => true,
-    'show_in_rest' => true,
-    'menu_icon' => 'dashicons-welcome-learn-more',
-    'taxonomies' => array('category'),
-    'labels' => array(
-      'name' => 'History',
-      'add_new_item' => 'Add New History Item',
-      'edit_item' => 'Edit History Item',
-      'all_items' => 'All History Items',
-      'singular_name' => 'History Item'
-    ),
-    'show_in_rest' => true,
-    'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
-    'rewrite' => array('slug' => 'history'),
-    'has_archive' => true,
-  ));
   register_post_type('books', array(
+    // 'rewrite' => array('slug' => 'books'), => This is optional, WordPress will automatically generate the slug I wrote here..
+    'has_archive' => true,
     'public' => true,
     'show_in_rest' => true,
     'menu_icon' => 'dashicons-book-alt',
@@ -73,10 +57,7 @@ function knoledge_post_types() {
       'all_items' => 'All Book Items',
       'singular_name' => 'Book Item'
     ),
-    'show_in_rest' => true,
     'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
-    'rewrite' => array('slug' => 'history'),
-    'has_archive' => true,
   ));
 }
 
