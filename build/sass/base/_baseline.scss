@@ -7,7 +7,7 @@
 }
 
 @mixin atSmallMedium {
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     @content;
   }
 }
@@ -17,6 +17,19 @@
     @content;
   }
 }
+
+@mixin atMediumLarge {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin atLarge {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
 
 @mixin absolutePosBottom {
   position: absolute;

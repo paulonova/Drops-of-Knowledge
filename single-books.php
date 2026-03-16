@@ -17,6 +17,7 @@
 
 <?php endwhile; ?>
 
+
 <div class="container container--narrow page-section">
   <div class="metabox metabox--position-up metabox--with-home-link">
     <p>
@@ -26,7 +27,14 @@
       <span class="metabox__main"><?php the_title(); ?></span>
     </p>
   </div>
-  <div class="generic-content generic-content__extra-spacing"><?php the_content(); ?></div>
+  <div class="bookpage">
+    <div class="bookpage-book">
+      <img class="alignleft" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?>">
+    </div>
+
+    <div class="generic-content generic-content__extra-spacing"><?php the_content(); ?></div>
+  </div>
+
 </div>
 
 

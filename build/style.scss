@@ -1,4 +1,3 @@
-
 /* SASS and Global'ish Stuff */
 
 @use "sass/modules/normalize.scss";
@@ -6,6 +5,8 @@
 
 
 @use "sass/modules/shame.scss";
+@use "sass/modules/event-card.scss";
+@use "sass/modules/single-page.scss";
 @use "sass/modules/site-header.scss";
 @use "sass/modules/site-footer.scss";
 @use "sass/modules/main-navigation.scss";
@@ -25,3 +26,9 @@
 @use "sass/modules/post-item.scss";
 @use "sass/modules/professor-card.scss";
 @use "sass/modules/search-overlay.scss";
+
+/* Tailwinds styling */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,26 @@
+.bookpage {
+  display: flex;
+  gap: 2rem;
+  align-items: top;
+  margin-top: 50px;
+  justify-content: space-between;
+
+  @media (max-width: 530px) {
+    display: block;
+  }
+
+  &-book {
+    flex: 0 0 300px;
+
+    img {
+      width: 100%;
+      height: auto;
+
+      @media (max-width: 530px) {
+        width: 50%;
+        margin: 0 auto;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@use "../base/variables" as *;
+@use "../base/baseline" as *;
+
+.main-cards-container {
+
+
+  .event-section {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .hero {
+    background-color: $lightOrange;
+    padding: 4.5rem 0 13rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    margin: 0 0 1rem;
+    font-weight: 400;
+    font-size: clamp(2.2rem, 4vw, 4.4rem);
+    line-height: 1.1;
+    color: rgba(255, 255, 255, 0.94);
+  }
+
+  .hero p {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0 1.2rem;
+    max-width: 75%;
+    font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+    line-height: 1.7;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.75);
+
+    @include atSmall {
+      padding: 0 1.5rem;
+    }
+  }
+
+  .cards-wrapper {
+    margin-top: -9rem;
+    padding-bottom: 1rem;
+
+
+    .cards-container {
+      width: min(100% - 2rem, $containerWidth);
+      margin-inline: auto;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+
+    }
+
+    .card {
+      background-color: whitesmoke;
+      box-shadow: $shadow;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+
+      @include atMediumLarge {
+        padding: 2rem;
+      }
+    }
+
+    .card__image {
+      // aspect-ratio: 1 / 0.78;
+      overflow: hidden;
+      background: #ddd;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+
+
+
+
+
+  }
+
+  .cards-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $mainBlue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.event-date {
+  font-size: 1rem;
+  color: $grayDark;
+  margin-bottom: 0.5rem;
+}
+
+
+
+
+/* TABLET */
+
+
+/* MOBILE */

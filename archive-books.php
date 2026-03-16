@@ -21,7 +21,6 @@
       </div>
 
       <div class="generic-content">
-        <p>A small thumbnail of the book here..</p>
         <?php the_excerpt(); ?>
         <p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Läs mer &raquo;</a></p>
       </div>
