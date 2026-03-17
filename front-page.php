@@ -76,8 +76,11 @@
 
 <!-- EVENT CARDS  -->
 <?php $homepageEventPosts = new WP_Query(array(
-  'posts_per_page' => 3,
+  'posts_per_page' => 3,  // -1 value to show all posts
   'post_type' => 'events',
+  'meta_key' => 'event_date',
+  'orderby' => 'meta_value_num',  // rand to show random posts
+  'order' => 'ASC'
 )); ?>
 <?php if ($homepageEventPosts->have_posts()) : ?>
   <main class="main-cards-container">
