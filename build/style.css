@@ -817,9 +817,10 @@ li {
   color: #484747;
   margin-bottom: 0.5rem;
 }
+.event-date i {
+  color: #EE964B;
+}
 
-/* TABLET */
-/* MOBILE */
 .bookpage {
   display: flex;
   gap: 2rem;
@@ -1604,6 +1605,7 @@ li {
 
 .hero-slider {
   position: relative;
+  margin-bottom: 50px;
 }
 .hero-slider div {
   outline: none;
@@ -1619,8 +1621,9 @@ li {
   }
 }
 .hero-slider__slide {
-  background-size: cover;
+  background-size: contain, 50%;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .hero-slider__overlay {
   margin: 0 auto;

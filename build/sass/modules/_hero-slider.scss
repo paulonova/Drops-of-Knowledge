@@ -2,6 +2,7 @@
 
 .hero-slider {
   position: relative;
+  margin-bottom: 50px;
 
   div {
     outline: none;
@@ -18,8 +19,9 @@
   }
 
   &__slide {
-    background-size: cover;
+    background-size: contain, 50%;
     background-repeat: no-repeat;
+    background-position: center;
   }
 
   &__overlay {
@@ -27,6 +29,7 @@
     background-color: rgba(0, 0, 0, 0.68);
     padding: 40px;
     color: #fff;
+
     @include atMedium {
       width: fit-content;
     }
@@ -42,6 +45,7 @@
   margin: 0;
   text-align: center;
   top: 15px;
+
   @include atMedium {
     top: 50px;
   }
@@ -86,6 +90,7 @@
   margin: 0;
   text-align: center;
   top: 15px;
+
   @include atMedium {
     top: 50px;
   }
