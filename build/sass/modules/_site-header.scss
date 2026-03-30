@@ -86,10 +86,11 @@
     @include atSmall {
       top: 5px;
       font-size: 1.4rem;
+      display: block;
     }
 
     @include atMedium {
-      display: none;
+      display: none !important;
     }
   }
 

@@ -1,8 +1,15 @@
 # Drops of Knowledge
 
-- To run SCSS only: `npm run watch-css`
+- To run SCSS only:
 
-\*\* EVENT CARDS
+```
+`npm run watch-css`
+```
+
+### EVENT CARDS
+
+- `meta-key` para conectar com o ACF field
+- `meta_value_num` Que faz o orderby as datas dos eventos do ACF
 
 ```
 <?php $homepageEventPosts = new WP_Query(array(

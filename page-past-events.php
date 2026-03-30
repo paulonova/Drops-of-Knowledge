@@ -3,16 +3,31 @@
 <div class="page-banner page-banner__bg-image-intern-pages">
   <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>)"></div>
   <div class="page-banner__content container container--narrow">
-    <h1 class="page-banner__title">Alla Eventer</h1>
+    <h1 class="page-banner__title">Past Events</h1>
     <div class="page-banner__intro">
-      <p>All the events that are upcoming or have already happened.</p>
+      <p>All the past events.</p>
     </div>
   </div>
 </div>
 
+<?php $pastEventsPosts = new WP_Query(array(
+  'paged' => get_query_var('paged', 1),
+  'post_type' => 'events',
+  'meta_key' => 'event_date',
+  'orderby' => 'meta_value_num',
+  'order' => 'DESC',
+  'meta_query' => array(
+    array(
+      'key' => 'event_date',
+      'compare' => '<',
+      'value' => date('Ymd'),
+      'type' => 'NUMERIC'
+    )
+  )
+)); ?>
+
 <div class="container container--narrow page-section container--margin-top-medium">
-  <?php
-  while (have_posts()): the_post(); ?>
+  <?php while ($pastEventsPosts->have_posts()): $pastEventsPosts->the_post(); ?>
     <div class="event-summary">
       <a class="event-summary__date t-center" href="#">
         <span class="event-summary__month"><?php $eventDate = new DateTime(get_field('event_date'));
@@ -26,10 +41,11 @@
     </div>
 
   <?php endwhile; ?>
-  <?php echo paginate_links() ?>
-  <hr class="section-break" />
-  <p>Letar du efter tidigare eventer? <a href="<?php echo site_url('/past-events'); ?>">Alla Eventer</a></p>
-  <br />
+  <!-- Need to define the total number of pages -->
+  <?php echo paginate_links(array(
+    'total' => $pastEventsPosts->max_num_pages
+  )) ?>
+
 </div>
 
 <?php get_footer(); ?>

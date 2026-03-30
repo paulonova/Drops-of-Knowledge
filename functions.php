@@ -26,6 +26,7 @@ add_action('after_setup_theme', 'knowledge_features');
 
 
 function knoledge_post_types() {
+  // Events Post types
   register_post_type('events', array(
     // 'rewrite' => array('slug' => 'events'),  => This is optional, WordPress will automatically generate the slug I wrote here..
     'has_archive' => true,
@@ -43,8 +44,8 @@ function knoledge_post_types() {
     'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
   ));
 
+  // Books Post types
   register_post_type('books', array(
-    // 'rewrite' => array('slug' => 'books'), => This is optional, WordPress will automatically generate the slug I wrote here..
     'has_archive' => true,
     'public' => true,
     'show_in_rest' => true,
@@ -56,6 +57,40 @@ function knoledge_post_types() {
       'edit_item' => 'Edit Book Item',
       'all_items' => 'All Book Items',
       'singular_name' => 'Book Item'
+    ),
+    'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+  ));
+
+  // Program Post types
+  register_post_type('program', array(
+    'has_archive' => true,
+    'public' => true,
+    'show_in_rest' => true,
+    'menu_icon' => 'dashicons-awards',
+    'taxonomies' => array('category'),
+    'labels' => array(
+      'name' => 'Program',
+      'add_new_item' => 'Add New Program',
+      'edit_item' => 'Edit Program',
+      'all_items' => 'All Programs',
+      'singular_name' => 'Program'
+    ),
+    'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
+  ));
+
+  // Writers Post types
+  register_post_type('writers', array(
+    // 'has_archive' => true,  => This is optional, we don't need an archive page for writers.
+    'public' => true,
+    'show_in_rest' => true,
+    'menu_icon' => 'dashicons-welcome-write-blog',
+    'taxonomies' => array('category'),
+    'labels' => array(
+      'name' => 'Writers',
+      'add_new_item' => 'Add New Writer',
+      'edit_item' => 'Edit Writer',
+      'all_items' => 'All Writers',
+      'singular_name' => 'Writer'
     ),
     'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
   ));
@@ -73,3 +108,30 @@ add_filter('get_search_form', function ($form) {
     $form
   );
 });
+
+
+function knowledge_adjust_queries($query) {
+  // To manipulate the default WordPress query for the program post type archive page in the admin area.
+  if (!is_admin() and is_post_type_archive('program') and $query->is_main_query()) {
+    $query->set('orderby', 'title');
+    $query->set('order', 'ASC');
+    $query->set('posts_per_page', -1);
+  }
+
+  if (!is_admin() and is_post_type_archive('events') and $query->is_main_query()) {
+    $today = date('Ymd');
+    $query->set('meta_key', 'event_date');
+    $query->set('orderby', 'meta_value_num');
+    $query->set('order', 'ASC');
+    $query->set('meta_query', [
+      [
+        'key' => 'event_date',
+        'value' => $today,
+        'compare' => '>=',
+        'type' => 'DATE',
+      ]
+    ]);
+  }
+}
+
+add_action('pre_get_posts', 'knowledge_adjust_queries');

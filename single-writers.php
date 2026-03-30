@@ -18,21 +18,13 @@
 <?php endwhile; ?>
 
 <div class="container container--narrow page-section">
-  <div class="metabox metabox--position-up metabox--with-home-link">
-    <p>
-      <a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('events') ?>">
-        <i class="fa fa-home" aria-hidden="true"></i> Events Home
-      </a>
-      <span class="metabox__main"><?php the_title(); ?></span>
-    </p>
-  </div>
+
   <div class="generic-content generic-content__extra-spacing"><?php the_content(); ?></div>
 
-  <?php
-  $related_programs = get_field('related_programs');
+  <?php $related_programs = get_field('related_programs');
   if ($related_programs): ?>
     <hr class="section-break" />
-    <h2 class="headline headline--medium">Related Program(s)</h2>
+    <h2 class="headline headline--medium">Subject(s) Taught</h2>
     <ul class="link-list min-list">
       <?php foreach ($related_programs as $program): ?>
         <li>

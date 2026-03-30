@@ -3,6 +3,11 @@
 
 .main-cards-container {
 
+  .card-container-size {
+    width: 100%;
+    min-height: 600px;
+  }
+
 
   .event-section {
     position: relative;
@@ -51,7 +56,7 @@
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 2rem;
 
     }
@@ -75,7 +80,8 @@
 
       img {
         width: 100%;
-        height: auto;
+        height: 250px;
+        object-fit: cover;
         display: block;
       }
     }
@@ -107,4 +113,12 @@
   i {
     color: $lightOrange;
   }
+}
+
+.no-events-block {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: $mainBlue;
+  color: white;
+  font-size: larger;
 }

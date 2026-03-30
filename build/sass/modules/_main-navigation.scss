@@ -2,7 +2,11 @@
 @use "../base/variables" as *;
 
 .main-navigation {
-  padding-top: 2px;
+  padding-top: 150px;
+
+  @include atMedium {
+    padding-top: 2px;
+  }
 
   ul {
     padding: 0;
@@ -40,6 +44,7 @@
   color: #fff;
   text-decoration: none;
   font-weight: 300;
+
   @include atMedium {
     display: inline-block;
     padding: 0;

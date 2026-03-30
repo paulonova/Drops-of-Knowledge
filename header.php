@@ -30,6 +30,7 @@
           ?>
         </nav>
         <div class="site-header__util">
+          <!-- LOGIN BUTTONS -->
           <!-- <a href="#" class="btn btn--small btn--orange float-left push-right">Logga in</a>
           <a href="#" class="btn btn--small btn--dark-orange float-left">Registrera dig</a> -->
           <span class="search-trigger js-search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span>
@@ -43,8 +44,10 @@
     <li <?php //if (is_page('about-the-site') || wp_get_post_parent_id(get_the_ID()) == 15) echo 'class="current-menu-item"';
         ?>><a href="<?php //echo site_url('/about-the-site')
                     ?>">About the Site</a></li>
-    <li><a href="#">Program</a></li>
-    <li><a href="<?php //if (get_post_type() == 'event') echo 'class="current-menu-item"'; 
+    <li <?php //if (get_post_type() == 'program') echo 'class="current-menu-item"'; 
+        ?>><a href="<?php //echo get_post_type_archive_link('program') 
+                              ?>">Program</a></li>
+    <li><a href="<?php //if (get_post_type() == 'event' or is_page('past-events')) echo 'class="current-menu-item"'; 
                   ?>">Evenemang</a></li>
     <li><a href="#">Campus</a></li>
     <li <?php //if (get_post_type() == 'post') echo 'class="current-menu-item"';
