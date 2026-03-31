@@ -24,4 +24,21 @@
 
 ### PLUGINS:
 
-\*\* ACF
+- ACF
+- Image regenerate
+
+### IMAGE OPTIMIZER
+
+```
+** Add_image_size gera uma nova imagem com um tamanho especifico otimizando assim o tamanho das imagens do WP.
+
+function knowledge_features() {
+  add_image_size('writerLandscape', 400, 260, true); // No lugar do true, pode se usar array('left', 'top') para controlar o crop da imagem
+  add_image_size('writerPortraitMedium', 200, 200, true);
+  add_image_size('writerPortrait', 480, 650, true);
+}
+
+add_action('after_setup_theme', 'knowledge_features');
+
+
+```

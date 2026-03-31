@@ -1,7 +1,7 @@
 <?php
 
 // Create theme support for post thumbnails (featured images) in the editor.
-add_theme_support('post-thumbnails');
+// add_theme_support('post-thumbnails');
 
 function knowledge_files() {
   wp_enqueue_script('main-knowledge-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
@@ -20,6 +20,10 @@ function knowledge_features() {
   register_nav_menu('footerMenuOne', 'Footer Menu Location One');
   register_nav_menu('footerMenuTwo', 'Footer Menu Location Two');
   add_theme_support('title-tag');
+  add_theme_support('post-thumbnails');
+  add_image_size('writerLandscape', 400, 260, true);
+  add_image_size('writerPortraitMedium', 200, 200, true);
+  add_image_size('writerPortrait', 480, 650, true);
 }
 
 add_action('after_setup_theme', 'knowledge_features');
