@@ -219,3 +219,15 @@
     }
   }
 }
+
+
+.icon-orange {
+  color: $lightOrange;
+  transform: rotate(-10deg);
+
+  &:hover {
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+}

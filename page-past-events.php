@@ -1,14 +1,5 @@
 <?php get_header(); ?>
-
-<div class="page-banner page-banner__bg-image-intern-pages">
-  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>)"></div>
-  <div class="page-banner__content container container--narrow">
-    <h1 class="page-banner__title">Past Events</h1>
-    <div class="page-banner__intro">
-      <p>All the past events.</p>
-    </div>
-  </div>
-</div>
+<?php pageBanner() ?>
 
 <?php $pastEventsPosts = new WP_Query(array(
   'paged' => get_query_var('paged', 1),
@@ -27,6 +18,7 @@
 )); ?>
 
 <div class="container container--narrow page-section container--margin-top-medium">
+  <h2 class="headline headline--small-plus-condensed"><i class="fa-regular fa-calendar-days icon-orange"></i> Vi ser fram emot nästa tillfälle tillsammans</h2>
   <?php while ($pastEventsPosts->have_posts()): $pastEventsPosts->the_post(); ?>
     <div class="event-summary">
       <a class="event-summary__date t-center" href="#">

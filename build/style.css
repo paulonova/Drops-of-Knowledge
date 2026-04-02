@@ -1050,6 +1050,16 @@ li {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
 }
 
+.icon-orange {
+  color: #EE964B;
+  transform: rotate(-10deg);
+}
+.icon-orange:hover {
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
 .site-header {
   z-index: 3;
   position: absolute;
@@ -1590,6 +1600,10 @@ li {
   .headline--medium {
     font-size: 3.125rem;
   }
+}
+.headline--small-plus-condensed {
+  font-size: 2rem;
+  margin-bottom: 3.9rem;
 }
 .headline--small-plus {
   font-family: "Roboto", sans-serif;

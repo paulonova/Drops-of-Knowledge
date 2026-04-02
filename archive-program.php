@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="page-banner page-banner__bg-image-intern-pages">
-  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>)"></div>
+  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/banner-archive-programs.jpg') ?>)"></div>
   <div class="page-banner__content container container--narrow">
     <h1 class="page-banner__title">Alla Program</h1>
     <div class="page-banner__intro">

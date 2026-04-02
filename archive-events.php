@@ -1,11 +1,10 @@
 <?php get_header(); ?>
-
 <div class="page-banner page-banner__bg-image-intern-pages">
-  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>)"></div>
+  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/banner-archive-events.jpg') ?>)"></div>
   <div class="page-banner__content container container--narrow">
     <h1 class="page-banner__title">Alla Eventer</h1>
     <div class="page-banner__intro">
-      <p>All the events that are upcoming or have already happened.</p>
+      <p>Eventer du inte får missa</p>
     </div>
   </div>
 </div>
@@ -28,7 +27,7 @@
   <?php endwhile; ?>
   <?php echo paginate_links() ?>
   <hr class="section-break" />
-  <p>Letar du efter tidigare eventer? <a href="<?php echo site_url('/past-events'); ?>">Alla Eventer</a></p>
+  <p>Letar du efter tidigare eventer? <a href="<?php echo site_url('/past-events'); ?>">Alla Tidigare Eventer</a></p>
   <br />
 </div>
 

@@ -3,6 +3,26 @@
 // Create theme support for post thumbnails (featured images) in the editor.
 // add_theme_support('post-thumbnails');
 
+function pageBanner($args = NULL) {
+  if (!isset($args['title'])) {
+    $args['title'] = get_the_title() ? get_the_title() : 'Ingen titel beskrevs';
+  }
+  if (!isset($args['subtitle'])) {
+    $args['subtitle'] = get_field('page_banner_subtitle') ? get_field('page_banner_subtitle') : 'Ingen undertitel beskrevs';
+  }
+  $image = get_field('page_banner_background_image'); ?>
+  <div class="page-banner page-banner__bg-image-intern-pages">
+    <div class="page-banner__bg-image" style="background-image: url(<?php echo $image ? esc_url($image['sizes']['pageBanner']) : get_theme_file_uri('/images/ocean.jpg'); ?>)"></div>
+    <div class="page-banner__content container container--narrow">
+      <h1 class="page-banner__title"><?php echo $args['title'] ?></h1>
+      <div class="page-banner__intro">
+        <p><?php echo $args['subtitle'] ?></p>
+      </div>
+    </div>
+  </div>
+<?php
+}
+
 function knowledge_files() {
   wp_enqueue_script('main-knowledge-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
   wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
@@ -24,6 +44,7 @@ function knowledge_features() {
   add_image_size('writerLandscape', 400, 260, true);
   add_image_size('writerPortraitMedium', 200, 200, true);
   add_image_size('writerPortrait', 480, 650, true);
+  add_image_size('pageBanner', 1500, 350, true);
 }
 
 add_action('after_setup_theme', 'knowledge_features');
