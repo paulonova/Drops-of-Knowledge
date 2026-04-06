@@ -4,6 +4,7 @@
 .full-width-split {
   @include atMedium {
     display: flex;
+    min-height: 450px;
   }
 
   .positioned {
@@ -14,10 +15,10 @@
   &__one {
     flex: 1;
     position: relative;
-    padding: 1.6rem 16px;
+    padding: 2.6rem 20px;
 
     @include atMedium {
-      padding: 40px;
+      padding: 50px 40px;
     }
 
     .full-width-split__inner {
@@ -31,10 +32,10 @@
     flex: 1;
     position: relative;
     background-color: $beige;
-    padding: 1.6rem 16px;
+    padding: 2.6rem 20px;
 
     @include atMedium {
-      padding: 40px;
+      padding: 50px 40px;
     }
   }
 

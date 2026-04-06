@@ -16,28 +16,17 @@
     <div class="full-width-split__inner">
       <h2 class="headline headline--small-plus t-center">Senaste teologiska artiklar</h2>
       <?php $homepageTheoPosts = new WP_Query(array(
-        'posts_per_page' => 2,
+        'posts_per_page' => 3,
         'post_type' => 'post',
         'category_name' => 'theology'
       )); ?>
 
-      <?php while ($homepageTheoPosts->have_posts()): $homepageTheoPosts->the_post(); ?>
-        <div class="event-summary">
-          <a class="event-summary__date t-center" href="#">
-            <span class="event-summary__month"><?php echo the_time('M'); ?></span>
-            <span class="event-summary__day"><?php echo the_time('d'); ?></span>
-          </a>
-          <div class="event-summary__content">
-            <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-            <p><?php if (has_excerpt()) {
-                  echo get_the_excerpt();
-                } else echo wp_trim_words(get_the_content(), 18); ?> <a href="<?php the_permalink(); ?>" class="nu gray">Läs mer</a></p>
-          </div>
-        </div>
-      <?php endwhile;
+      <?php while ($homepageTheoPosts->have_posts()) {
+        $homepageTheoPosts->the_post();
+        get_template_part('template-parts/event');
+      }
       // Always reset post data after custom query
-      wp_reset_postdata();
-      ?>
+      wp_reset_postdata(); ?>
       <p class="t-center no-margin positioned"><a href="<?php echo site_url('/category/theology/'); ?>" class="btn btn--blue">Teologiska artiklar</a></p>
     </div>
   </div>
@@ -152,7 +141,7 @@ $homepageEventPosts = new WP_Query(array(
 
 
 <?php $homepageBooksPosts = new WP_Query(array(
-  'posts_per_page' => 3,
+  'posts_per_page' => -1,
   'post_type' => 'books',
 )); ?>
 

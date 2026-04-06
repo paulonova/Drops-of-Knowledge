@@ -1461,6 +1461,7 @@ li {
 @media (min-width: 960px) {
   .full-width-split {
     display: flex;
+    min-height: 450px;
   }
 }
 .full-width-split .positioned {
@@ -1473,11 +1474,11 @@ li {
 .full-width-split__one {
   flex: 1;
   position: relative;
-  padding: 1.6rem 16px;
+  padding: 2.6rem 20px;
 }
 @media (min-width: 960px) {
   .full-width-split__one {
-    padding: 40px;
+    padding: 50px 40px;
   }
 }
 @media (min-width: 960px) {
@@ -1489,11 +1490,11 @@ li {
   flex: 1;
   position: relative;
   background-color: #FAF0CA;
-  padding: 1.6rem 16px;
+  padding: 2.6rem 20px;
 }
 @media (min-width: 960px) {
   .full-width-split__two {
-    padding: 40px;
+    padding: 50px 40px;
   }
 }
 @media (min-width: 1350px) {

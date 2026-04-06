@@ -42,3 +42,22 @@ add_action('after_setup_theme', 'knowledge_features');
 
 
 ```
+
+### get_template_part()
+
+- get_template_part('template-parts/event', 'excerpt');
+
+- get_template_part() — WordPress função
+  A função get_template_part() carrega e exibe um arquivo de template parcial de seu tema.
+
+* Parâmetros:
+  'template-parts/event' → caminho + nome base do arquivo
+  'excerpt' → sufixo opcional
+
+- ex:
+  get_template_part('template-parts/event', 'excerpt');
+  O segundo argumento é o -excerpt: template.parts/event-excerpt
+
+🎯 Vantagem
+Reutiliza código: em vez de repetir o HTML do card em vários templates, você carrega sempre o mesmo arquivo
+Fácil manutenção: muda uma vez, reflete em todos os lugares que usam

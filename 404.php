@@ -5,7 +5,7 @@
 <?php get_header(); ?>
 
 <div class="page-banner page-banner__bg-image-intern-pages">
-  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>)"></div>
+  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/banner404.png') ?>)"></div>
   <div class="page-banner__content container container--narrow">
     <h1 class="page-banner__title">404 - Page Not Found</h1>
     <div class="page-banner__intro">
@@ -19,7 +19,7 @@
     <p>The page you requested could not be found. It may have been moved or deleted.</p>
 
     <h2 class="headline headline--medium">What would you like to do?</h2>
-    <ul>
+    <ul class="link-list min-list">
       <li><a href="<?php echo site_url() ?>">Return to homepage</a></li>
       <li><a href="<?php echo site_url('/blog') ?>">Visit our blog</a></li>
       <li><a href="<?php echo site_url('/about-the-site') ?>">Learn about us</a></li>
@@ -27,7 +27,6 @@
 
     <div class="search-icon-container">
       <h2 class="headline headline--medium">Search our site</h2>
-      <img src="<?php echo get_theme_file_uri('/images/404-icon.png') ?>" alt="404 Icon">
     </div>
 
     <div class="search-form-container">
