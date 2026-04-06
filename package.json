@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "dev": "wp-scripts start",
+    "devFast": "wp-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "npx sass ./build/style.scss ./build/style.css",
     "watch-css": "npx sass --watch ./build/style.scss ./build/style.css"
@@ -17,6 +21,7 @@
   "dependencies": {
     "@glidejs/glide": "^3.7.1",
     "@wordpress/scripts": "^31.8.0",
+    "axios": "^1.14.0",
     "normalize.css": "^8.0.1"
   }
 }

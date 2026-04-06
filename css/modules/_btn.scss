@@ -84,6 +84,7 @@
     font-size: 1.3rem;
     padding: 16px 34px;
     border-radius: 5px;
+
     @include atSmall {
       font-size: 1.9rem;
     }
@@ -93,6 +94,7 @@
     font-size: 1.3rem;
     padding: 16px 30px;
     border-radius: 5px;
+
     @include atSmall {
       font-size: 1.5rem;
     }
