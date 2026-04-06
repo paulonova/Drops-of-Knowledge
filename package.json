@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.7.1",
+    "@wordpress/scripts": "^31.8.0",
     "normalize.css": "^8.0.1"
   }
 }

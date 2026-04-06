@@ -23,7 +23,7 @@
 
       <?php while ($homepageTheoPosts->have_posts()) {
         $homepageTheoPosts->the_post();
-        get_template_part('template-parts/event');
+        get_template_part('template-parts/content', 'event');
       }
       // Always reset post data after custom query
       wp_reset_postdata(); ?>
