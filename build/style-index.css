@@ -2078,7 +2078,6 @@ body.admin-bar .search-overlay {
   font-size: 2.1rem;
   cursor: pointer;
   transition: all 0.3s;
-  background-color: #fff;
   color: #ff6900;
   line-height: 0.7;
 }
