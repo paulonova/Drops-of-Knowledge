@@ -29,6 +29,11 @@ function knowledge_files() {
   wp_enqueue_style('parisienne-font', '//fonts.googleapis.com/css2?family=Parisienne&display=swap');
   wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
   wp_enqueue_style('knowledge_main_styles', get_theme_file_uri('/build/style-index.css'));
+
+  // Localize the main JavaScript file to pass the site URL to the frontend, allowing the Search module to make AJAX requests to the WordPress REST API.
+  wp_localize_script('main-knowledge-js', 'knowledgeData', array(
+    'root_url' => get_site_url(),
+  ));
 }
 
 // Hook the knowledge_files function to the wp_enqueue_scripts action to load scripts and styles properly.

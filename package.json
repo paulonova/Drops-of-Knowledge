@@ -8,8 +8,8 @@
     "dev": "wp-scripts start",
     "devFast": "wp-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "npx sass ./build/style.scss ./build/style.css",
-    "watch-css": "npx sass --watch ./build/style.scss ./build/style.css"
+    "build-css": "npx sass ./css/style.scss ./build/style-index.css",
+    "watch-css": "npx sass --watch ./css/style.scss ./build/style-index.css"
   },
   "keywords": [],
   "author": "",
