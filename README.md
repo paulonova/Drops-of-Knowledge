@@ -61,3 +61,12 @@ add_action('after_setup_theme', 'knowledge_features');
 🎯 Vantagem
 Reutiliza código: em vez de repetir o HTML do card em vários templates, você carrega sempre o mesmo arquivo
 Fácil manutenção: muda uma vez, reflete em todos os lugares que usam
+
+### CHECK DOCUMENTATION
+
+<a href="https://developer.wordpress.org/rest-api/reference/posts/#list-posts">RestAPI References</a>
+
+```
+https://developer.wordpress.org/rest-api/reference/posts/#list-posts
+
+```
