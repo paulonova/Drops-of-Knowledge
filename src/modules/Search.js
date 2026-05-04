@@ -23,8 +23,8 @@ class Search {
   }
 
   openOverlay() {
-    console.log('open');
     this.searchField.val('');
+    this.resultsDiv.html(''); // clear previous results
     this.searchOverlay.addClass('search-overlay--active');
     $('body').addClass('body-no-scroll');
     setTimeout(() => this.searchField.focus(), 301);
@@ -32,7 +32,6 @@ class Search {
   }
 
   closeOverlay() {
-    console.log('close');
     this.searchOverlay.removeClass('search-overlay--active');
     $('body').removeClass('body-no-scroll');
     this.isOverlayOpen = false;
@@ -68,14 +67,27 @@ class Search {
         var combinedResults = posts[0].concat(pages[0]);
         this.resultsDiv.html(`
         <h2 class="search-overlay__section-title">General Information</h2>
-        ${combinedResults.length ? '<ul class="link-list min-list">' : '<p>No general information matches that search.</p>'}
-          ${combinedResults.map((item) => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
+        ${
+          combinedResults.length
+            ? '<ul class="link-list min-list">'
+            : '<p>No general information matches that search.</p>'
+        }
+          ${combinedResults
+            .map(
+              (item) =>
+                `<li><a href="${item.link}">${item.title.rendered}</a>  ${
+                  item.type == 'post' ? `by ${item.authorName}` : ''
+                }</li>`,
+            )
+            .join('')}
         ${combinedResults.length ? '</ul>' : ''}
       `);
         this.isSpinnerVisible = false;
       },
-      () => {
-        this.resultsDiv.html('<p>Unexpected error; please try again.</p>');
+      (e) => {
+        this.resultsDiv.html(
+          '<p>Unexpected error; please try again.</p> ' + ' Status: ' + e.statusText,
+        );
       },
     );
   }
@@ -110,20 +122,3 @@ class Search {
 }
 
 export default Search;
-
-// this.resultsDiv.html(`
-//             <h2 class="search-overlay__section-title">General Information</h2>
-//             ${
-//               posts.length
-//                 ? '<ul class="link-list min-list">'
-//                 : '<p>No general information matches that search.</p>'
-//             }
-//             ${posts
-//               .map(
-//                 (post) =>
-//                   `<li><a href="${post.link}">${post.title.rendered}</a></li>`,
-//               )
-//               .join('')}
-//             ${posts.length ? '</ul>' : ''}
-
-//         `);

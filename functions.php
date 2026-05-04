@@ -1,7 +1,16 @@
 <?php
 
-// Create theme support for post thumbnails (featured images) in the editor.
-// add_theme_support('post-thumbnails');
+
+// Register a new field called 'authorName' to the REST API response for the 'post' post type, 
+//allowing us to retrieve the author's display name when fetching posts via the REST API.
+function knoledge_customtom_rest() {
+  register_rest_field('post', 'authorName', array(
+    'get_callback' => function () {
+      return get_the_author();
+    }
+  ));
+}
+add_action('rest_api_init', 'knoledge_customtom_rest');
 
 function pageBanner($args = NULL) {
   if (!isset($args['title'])) {

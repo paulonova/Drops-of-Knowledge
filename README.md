@@ -73,6 +73,8 @@ https://developer.wordpress.org/rest-api/reference/posts/#list-posts
 
 ```
 
+### ASYNC RestAPI request
+
 ````
 getResult() {
     $.when(
@@ -98,7 +100,7 @@ getResult() {
   ```
 ````
 
-- This function performs a search across your WordPress site:
+- This function performs a search across my WordPress site:
 
 <p>Makes two API calls — Uses $.when() to fetch search results from the WordPress REST API for both posts and pages simultaneously</p>
 
@@ -109,3 +111,7 @@ getResult() {
 - Error handling — If either API call fails, it displays an error message
 
 <p>The search term comes from this.searchField.val() (the user's input), and results are inserted into this.resultsDiv.</p>
+
+## CREATING A NEW restAPI URL
+
+<img href="./images/restApi reasons.jpg">
