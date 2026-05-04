@@ -62,6 +62,8 @@ add_action('after_setup_theme', 'knowledge_features');
 Reutiliza código: em vez de repetir o HTML do card em vários templates, você carrega sempre o mesmo arquivo
 Fácil manutenção: muda uma vez, reflete em todos os lugares que usam
 
+## SEARCH DEVELOPMENT
+
 ### CHECK DOCUMENTATION
 
 <a href="https://developer.wordpress.org/rest-api/reference/posts/#list-posts">RestAPI References</a>
@@ -70,3 +72,40 @@ Fácil manutenção: muda uma vez, reflete em todos os lugares que usam
 https://developer.wordpress.org/rest-api/reference/posts/#list-posts
 
 ```
+
+````
+getResult() {
+    $.when(
+      $.getJSON(knowledgeData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val()),
+      $.getJSON(knowledgeData.root_url + '/wp-json/wp/v2/pages?search=' + this.searchField.val()),
+    ).then(
+      (posts, pages) => {
+        var combinedResults = posts[0].concat(pages[0]);
+        this.resultsDiv.html(`
+        <h2 class="search-overlay__section-title">General Information</h2>
+        ${combinedResults.length ? '<ul class="link-list min-list">' : '<p>No general information matches that search.</p>'}
+          ${combinedResults.map((item) => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
+        ${combinedResults.length ? '</ul>' : ''}
+      `);
+        this.isSpinnerVisible = false;
+      },
+      () => {
+        this.resultsDiv.html('<p>Unexpected error; please try again.</p>');
+      },
+    );
+  }
+
+  ```
+````
+
+- This function performs a search across your WordPress site:
+
+<p>Makes two API calls — Uses $.when() to fetch search results from the WordPress REST API for both posts and pages simultaneously</p>
+
+- Combines results — When both requests complete, it merges the posts and pages arrays into one
+- Displays results — Renders the combined results as an HTML list with links. If there are no matches, it shows "No general information matches that search"
+
+- Hides loading spinner — Sets isSpinnerVisible to false once done
+- Error handling — If either API call fails, it displays an error message
+
+<p>The search term comes from this.searchField.val() (the user's input), and results are inserted into this.resultsDiv.</p>
