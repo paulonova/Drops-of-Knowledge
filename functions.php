@@ -1,5 +1,8 @@
 <?php
 
+// Include the search-route.php file, which contains custom REST API routes for the search functionality.
+require get_theme_file_path('/includes/search-route.php');
+
 
 // Register a new field called 'authorName' to the REST API response for the 'post' post type, 
 //allowing us to retrieve the author's display name when fetching posts via the REST API.

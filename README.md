@@ -115,3 +115,9 @@ getResult() {
 ## CREATING A NEW restAPI URL
 
 <img src="./images/restApi reasons.jpg" alt="rest-api"/>
+
+- RestAPI url created:
+
+```
+http://drops-of-knowledge.local//wp-json/knoledge/v1/search
+```
