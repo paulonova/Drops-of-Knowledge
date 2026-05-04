@@ -114,4 +114,4 @@ getResult() {
 
 ## CREATING A NEW restAPI URL
 
-<img href="./images/restApi reasons.jpg"/>
+<img src="./images/restApi reasons.jpg" alt="rest-api"/>
